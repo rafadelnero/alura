@@ -1,0 +1,10 @@
+.classpath
+.metadata
+.recommenders
+RemoteSystemsTempFiles
+.factorypath
+.gradle/
+.project
+.settings/
+derby.log
+target/

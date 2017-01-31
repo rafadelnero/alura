@@ -1,0 +1,8 @@
+echo Ola mundo >> arquivo.txt
+type arquivo.txt
+tree
+mkdir
+move
+help
+set - ver todas variáveis de ambiente - trocar variável
+setx - trocar variável permanentemente /M para dizer que é criação de variável.

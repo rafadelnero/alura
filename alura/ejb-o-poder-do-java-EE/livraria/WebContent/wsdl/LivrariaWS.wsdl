@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://webservice.livraria.caelum.com.br" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://webservice.livraria.caelum.com.br" xmlns:intf="http://webservice.livraria.caelum.com.br" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://webservice.livraria.caelum.com.br" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getLivrosPorTitulo">
+    <complexType>
+     <sequence>
+      <element name="titulo" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getLivrosPorTituloResponse">
+    <complexType>
+     <sequence>
+      <element name="getLivrosPorTituloReturn" type="impl:ArrayOf_xsd_anyType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="ArrayOf_xsd_anyType">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="xsd:anyType"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getLivrosPorTituloResponse">
+
+      <wsdl:part element="impl:getLivrosPorTituloResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getLivrosPorTituloRequest">
+
+      <wsdl:part element="impl:getLivrosPorTitulo" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="LivrariaWS">
+
+      <wsdl:operation name="getLivrosPorTitulo">
+
+         <wsdl:input message="impl:getLivrosPorTituloRequest" name="getLivrosPorTituloRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getLivrosPorTituloResponse" name="getLivrosPorTituloResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="LivrariaWSSoapBinding" type="impl:LivrariaWS">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getLivrosPorTitulo">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getLivrosPorTituloRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getLivrosPorTituloResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="LivrariaWSService">
+
+      <wsdl:port binding="impl:LivrariaWSSoapBinding" name="LivrariaWS">
+
+         <wsdlsoap:address location="http://localhost:8080/livraria/services/LivrariaWS"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

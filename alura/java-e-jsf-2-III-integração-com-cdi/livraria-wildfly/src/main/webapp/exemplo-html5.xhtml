@@ -1,0 +1,21 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+	<body>
+		<form jsf:id="myForm" jsf:prependId="false">
+			<h:messages />
+			<table border="0">
+				<tr>
+					<td><label jsf:for="email">E-Mail</label></td>
+					<td><input jsf:id="email" type="text"
+						jsf:value="#{exemploHtml5Bean.email}" jsf:size="30" /></td>
+				</tr>
+			</table>
+			<input type="submit" value="Submit" />
+
+		</form>
+	</body>
+</html>

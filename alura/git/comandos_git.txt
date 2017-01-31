@@ -1,0 +1,95 @@
+Comandos Git:
+
+Working directory - Staging area - 
+
+Informa os comandos do git
+git help
+
+informa ao Git que a pasta atual no prompt de comando deve ser tratada como um repositório
+git init
+
+Adiciona um repositório remoto
+git remote add https://github.com/rafadelnero/argentum-web-jenkins-tests.git
+
+Lista os arquivos versionados
+git ls-files
+
+Checa o status do git, se os arquivos estão no modo staging ou se estão commitados..
+git status
+
+Adiciona no versionador (Deixa no modo Staging area)
+git add (--all ou -A ou .) que adiciona todos os arquivos modificados, removidos ou novos ao index!
+
+Remove do modo Staging area
+git reset
+
+Commit com o Git
+git commit -m "Mensagem", git commit -a "Commit em todos arquivos", git commit --help
+
+Ver log de commits
+git log
+
+Este comando, seguido pelo nome de um arquivo, mostra a última pessoa que alterou cada linha do mesmo e a data da alteração.
+git blame
+
+Mostra branches locais, e motra qual branch está em uso
+git branch
+
+Mostra branches remotas
+git branch -r
+
+Criar uma branch e seleciona
+git checkout -b [branch-nova]
+
+Cria uma branch localmente
+git branch [nome_nova_branch]
+
+Muda para uma outra branch ou volta arquivo para estado de antes de ser alterado (Preciso tirar arquivo do index)
+git checkout [nome_da_branch] || [nome_arquivo]
+
+Quando alteramos um arquivo no master e damos o push, automaticamente essa nova branch será criada remotamente
+
+Coloca arquivo no repositório remoto com a branch selecionada
+git push -u origin [branch-alterada]
+
+Coloca arquivo no repositório e deleta a branch
+git push origin --delete [branch-alterada]
+
+Efetua merge com branch master
+git merge [branch-alterada]
+
+Efetua merge com base na outra branch
+git rebase master [outra-branch]
+
+Reverte alterações de commit
+git revert [hash do commit]
+
+Faz backup de um arquivo temporário - Guarda alterações não commitadas
+git stash
+
+Lista os stashs
+git stash list
+
+Aplica os stashs em arquivos específicos
+git stash apply [hash]
+git stash pop
+
+Joga o stash fora
+git stash drop
+git stash clear
+
+Faz o reset do último commit
+git reset HEAD
+
+Procura um certo commit
+git bisect
+git bisect bad HEAD
+git bisect good [hash]
+
+Referenciar ao penultimo commit
+git checkout -b [branch-nova]
+
+Descarta definitivamente para o penúltimo commit
+git reset --hard HEAD~1
+
+
